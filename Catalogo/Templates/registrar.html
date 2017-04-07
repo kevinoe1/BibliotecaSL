@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+<style>
+	body {
+    background-image: url("{% static 'img/log.jpg' %}");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: auto;
+    text-align: center;
+	}
+
+	span{
+		display:none;
+	}
+
+	label {
+		color: #FFFFFF;
+		font-family: "Microsoft YaHei Light", "Microsoft Tai Le";
+	}
+
+	li{
+		color: #FF8181;
+		font-family: "Microsoft YaHei Light", "Microsoft Tai Le";
+	}
+
+
+</style>
+	
+{% endblock %}
+
+{% block container %}
+<div class="container">
+	<div class="col-md-4 col-md-offset-4" style="height: 570px; background-color: rgba(0, 0, 0, 0.5); box-shadow: 0 0 8px rgba(0,0,0,0.5); margin-top: 4%; padding-top: 1%;">
+		<form action="{% url 'registrar' %}" method="post">
+			{{ form.as_p }}
+			{% csrf_token %}
+			<br>
+			<button type="submit" name="registrar" class="btn btn-primary">Registrar</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

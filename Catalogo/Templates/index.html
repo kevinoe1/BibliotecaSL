@@ -3,3 +3,44 @@
     Bienvenidos a Biblioteca
 {% endblock %}
 
+{% block libro %}
+<section id="mostrar">
+		{% for libro in libros %}
+		<article class="libros">
+		<a id="cuadro" href="#">
+		<img id="portada" src="../media/{{ libro.portada }}" alt="por">
+		<b><p class="texto">{{ libro }}</p> 
+		<i><p class="texto">{{ libro.autor }}</p></b></i>
+		</a>
+		</article>
+		{% endfor %}
+</section>
+	<style>
+		#portada{
+			height: 190px;
+			width: 160px;
+		}
+		#cuadro{
+			color: black;
+			margin: auto;
+		}
+		#mostrar{
+			margin-top: -150px;
+			text-align: center;
+		}
+		.texto{
+			color: black;
+		}
+		.libros{
+			display: inline-table;
+			border: 3px;
+			border-style: outset;
+			height: 315px;
+			width: 220px;
+			text-align: center;
+			margin: 20px 20px 20px 20px;
+			padding: 15px;
+		}
+	</style>
+{% endblock  %}
+
